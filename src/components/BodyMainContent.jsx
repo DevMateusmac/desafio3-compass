@@ -2,6 +2,10 @@ import { Box, Typography} from "@mui/material";
 import FieldData from "./form/Form/FieldData";
 import Button from "./button/Button";
 
+import  carClassData  from "../utils/carClassData"
+import CardItem from "./card/CardItem";
+
+
 export default function BodyMainContent(){
   return (
     <Box
@@ -62,6 +66,46 @@ export default function BodyMainContent(){
           </form>
         </Box>
       </Box>   
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        padding={5}
+        marginTop={4}
+      >
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        margin="55px 0px 55px 0px"
+      >
+        <Typography
+          variant="h4"
+          color="#FBA403"
+          fontSize="26px"
+        >WHY SHOULD YOU RIDE WITH US?</Typography>
+        <Typography
+          variant="h3"
+          color="#FFFFFF"
+          fontSize="45px"
+          fontWeight="700"
+        >Best in class rides</Typography>
+      </Box>
+      <Box
+        display="flex"
+        justifyContent="center"
+        gap="15px"
+      >
+        {carClassData.map((item, index) => (
+          <CardItem
+            key={index} 
+            image={item.imageURL} 
+            title={item.title} 
+            description={item.description}
+          /> 
+          ))}
+      </Box>
     </Box>
+  </Box>
   )
 }
