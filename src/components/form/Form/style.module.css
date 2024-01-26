@@ -1,0 +1,53 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input{
+  padding-left: 9px;
+  height: 60px;
+  letter-spacing: .40px;
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #FFFFFF3B;
+  border-radius: 4px;
+} 
+
+.label{
+  position: absolute;
+  color: #FFFFFFB2;
+  background-color: #2c2c2c;
+  padding: 0px 5px 0px 3px;
+  font-size: 12px;
+  transform: translate(11px, -7px);
+  z-index: 1;
+} 
+
+.input:focus {
+  border: 1px solid #FBA403;
+  color: #FBA403;
+  outline: none;
+}
+
+.input:focus + .label {
+  color: #FBA403;
+}
+
+.input:focus ~ .icon{
+  background-image: url("/closeIconYellow.svg");
+} 
+
+.icon{
+  position: absolute;
+  cursor: pointer;
+  top: 25px;
+  right: 20px;
+  height: 11px;
+  width: 11px;
+  fill: #FBA403;
+}
+
